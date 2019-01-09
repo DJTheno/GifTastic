@@ -11,7 +11,7 @@ var topics = ["batman", "superman", "the flash", "nightwing", "iron man", "spide
 
 // creates buttons for each hero
 function buttons() {
-    $("newHero").empty();
+    $("#herobutton").empty();
     //for loop for array
     for (var i = 0; i < topics.length; i++) {
         // makes buttons for array
@@ -25,8 +25,8 @@ function buttons() {
 
 }
 //creates onclick function for button
-$("newHero").on("click", function () {
-
+$("#newHero").on("click", function () {
+    event.preventDefault();
     var good = $("#heros").val().trim();
     topics.push(good);
     buttons();
