@@ -11,7 +11,7 @@ var topics = ["batman", "superman", "the flash", "nightwing", "iron man", "spide
 
 // creates buttons for each hero
 function buttons() {
-    $("buttonView").empty();
+    $("newHero").empty();
     //for loop for array
     for (var i = 0; i < topics.length; i++) {
         // makes buttons for array
@@ -20,7 +20,7 @@ function buttons() {
         btn.attr("data-name", topics[i]);
         btn.text(topics[i]);
         //append button to html page
-        $("#herobutton").append();
+        $("#herobutton").append(btn);
     }
 
 }
@@ -44,7 +44,7 @@ function displayGifs() {
     var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + searchQuery + "&limit=9&offset=0&rating=G&lang=en";
 
     //calls to ajax
-    $.ajax({ url: queryURL, method: "GET" }).done(function (response) {
+    $.ajax({ url: queryUrl, method: "GET" }).done(function (response) {
         console.log(response.data);
 
         var results = response.data;
