@@ -21,6 +21,7 @@ function buttons() {
         btn.text(topics[i]);
         //append button to html page
         $("#herobutton").append(btn);
+        
     }
 
 }
@@ -39,10 +40,10 @@ $("#newHero").on("click", function () {
 function displayGifs() {
     var elementClicked = $(this);
 
-    var searchQuery = elementClicked.attr('data-named'); // TODO, fill out with the "name" of the button that was clicked
+    var searchQuery = elementClicked.attr('data-name'); // TODO, fill out with the "name" of the button that was clicked
     var api_key = "WxX4eRyvEOeZhA0odFULqFqm5GXlKm7P"; // TODO, add api key
     var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + searchQuery + "&limit=9&offset=0&rating=G&lang=en";
-
+   
     //calls to ajax
     $.ajax({ url: queryUrl, method: "GET" }).done(function (response) {
         console.log(response.data);
@@ -68,6 +69,8 @@ function displayGifs() {
         }
 
     });
+
+    
 }
 
 
